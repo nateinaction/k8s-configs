@@ -5,6 +5,7 @@ metadata:
 spec:
   replicas: 3
   template:
+    metadata:
       labels:
         app: wunderground-graphql
     spec:
