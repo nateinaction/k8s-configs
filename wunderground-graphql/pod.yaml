@@ -12,7 +12,7 @@ spec:
         - containerPort: 3000
       volumeMounts:
         - name: "api-key"
-          mountPath: "/usr/app/secrets"
+          mountPath: "/usr/src/app/secrets"
           readOnly: true
   volumes:
     - name: "api-key"
