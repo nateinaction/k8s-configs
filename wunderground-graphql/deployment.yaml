@@ -14,3 +14,11 @@ spec:
         image: nateinaction/wunderground-graphql:latest
         ports:
         - containerPort: 3000
+        volumeMounts:
+          - name: "api-key"
+            mountPath: "/usr/src/app/secrets"
+            readOnly: true
+    volumes:
+      - name: "api-key"
+        secret:
+          secretName: "api-key"
