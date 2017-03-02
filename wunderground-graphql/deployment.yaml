@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: wunderground-graphql
+spec:
+  replicas: 3
+  template:
+      labels:
+        app: wunderground-graphql
+    spec:
+      containers:
+      - name: wunderground-graphql
+        image: nateinaction/wunderground-graphql:latest
+        ports:
+        - containerPort: 3000

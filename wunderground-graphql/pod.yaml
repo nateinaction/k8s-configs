@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wunderground-graphql
+  labels:
+    app: wunderground-graphql
+spec:
+  containers:
+    - name: wunderground-graphql
+      image: nateinaction/wunderground-graphql:latest
+      ports:
+        - containerPort: 3000
+      volumeMounts:
+        - name: "api-key"
+          mountPath: "/usr/app/secrets"
+          readOnly: true
+  volumes:
+    - name: "api-key"
+      secret:
+        secretName: "api-key"
