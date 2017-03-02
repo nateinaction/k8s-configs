@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "wunderground-graphql"
+spec:
+  selector:
+    app: "wunderground-graphql"
+  type: "LoadBalancer"
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 3000
