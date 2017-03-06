@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: jenkins-deployment
+  selector:
+    app: "jenkins-pod"
