@@ -1,0 +1,13 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: drake-cluster-ingress
+spec:
+  rules:
+  - host: api.nategay.me
+    http:
+      paths:
+      - path: /graphql
+        backend:
+          serviceName: wunderground-graphql
+          servicePort: 80
